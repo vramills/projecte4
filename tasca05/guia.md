@@ -1,4 +1,4 @@
-# T05: Accés Remot. Connexió via SSH (tasca individual)
+# T05: Accés Remot. Connexió via SSH
 
 Creem les dues màquines virtuals, una amb Windows i l’altra amb Linux (Ubuntu). Una vegada dins de la màquina virtual d'Ubuntu, executarem les següents comandes per instal·lar SSH:
 
