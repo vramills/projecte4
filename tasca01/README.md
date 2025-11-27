@@ -1,4 +1,4 @@
-# 🗂️ T01 – DRP: Còpies de Seguretat  
+# 🗂️ T01: DRP: Còpies de Seguretat  
 ### *Estudi de cas: Muntatges i Serveis Tècnics SL (Treball cooperatiu)*
 
 Aquest repositori conté el desenvolupament complet de l’activitat **T01 de DRP (Disaster Recovery Plan)**, centrada en el disseny i planificació d’un sistema eficient de còpies de seguretat basat en un **cas pràctic realista** i treballat en diferents fases: individual, per parelles i en grup.
