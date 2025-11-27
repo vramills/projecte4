@@ -1,4 +1,4 @@
-# 🗂️ T03 – Pla de Recuperació davant Desastres  
+# 🗂️ T03: Pla de Recuperació davant Desastres  
 ### *Imatges del sistema – Prova de concepte amb Rescuezilla*
 
 Aquesta tasca forma part del Pla de Contingència i Continuïtat del Negoci que el client està desenvolupant.  
