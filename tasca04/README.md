@@ -1,4 +1,4 @@
-# 🖥️ T04 – Accés Remot  
+# 🖥️ T04: Accés Remot  
 ### *Administració de sistemes via SSH, RDP i eines d'assistència remota*
 
 Aquesta tasca introdueix un dels pilars fonamentals del treball d’un tècnic de sistemes i consultor IT:  
