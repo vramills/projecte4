@@ -49,6 +49,7 @@ Podeu consultar totes les tasques fent clic a la tasca corresponent:
 - [Tasca 13](tasca13/README.md)
 - [Tasca 14](tasca14/README.md)
 - [Tasca 15](tasca15/README.md)
+- [Tasca 16](tasca16/README.md)
 
 ---
 
