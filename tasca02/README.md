@@ -1,4 +1,4 @@
-# 🗂️ T02 – DRP: Còpies de Seguretat  
+# 🗂️ T02: DRP: Còpies de Seguretat  
 ### *Cas pràctic — Implementació i proves de concepte*
 
 Aquesta activitat posa en pràctica la política de còpies de seguretat dissenyada a la T01 per al client **"Muntatges i Serveis Tècnics SL"**.  
