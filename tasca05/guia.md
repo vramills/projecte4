@@ -177,13 +177,21 @@ scp id_ed25519.pub usuari@192.168.56.200:/home/usuari
 
 <img src="img/20.png">
 
+Pel que si ens dirigim al servidor, podem veure que a la carpeta **/home/usuari** s’ha passat l’arxiu correctament.
+
+<img src="img/21.png">
+
+Ens dirigim a la carpeta **.ssh** i podem veure que hi ha un arxiu anomenat **authorized\_keys**.
+
+<img src="img/22.png">
+
 Al servidor, afegim la clau a l'arxiu `authorized_keys`:
 
 ```bash
 cat /home/usuari/id_ed25519.pub >> ~/.ssh/authorized_keys
 ```
 
-<img src="img/21.png">
+<img src="img/23.png">
 
 Ara podem fer SSH sense contrasenya:
 
@@ -191,7 +199,7 @@ Ara podem fer SSH sense contrasenya:
 ssh usuari@192.168.56.200
 ```
 
-<img src="img/22.png">
+<img src="img/24.png">
 
 ---
 
@@ -209,7 +217,7 @@ Modificar:
 PasswordAuthentication no
 ```
 
-<img src="img/23.png">
+<img src="img/25.png">
 
 ---
 
@@ -217,12 +225,14 @@ PasswordAuthentication no
 
 ### 7.1 Mètode gràfic
 
-- Obrir **Características opcionales**  
-- Seleccionar **Servidor OpenSSH** i afegir-lo
-
-<img src="img/24.png">
-<img src="img/25.png">
+- Obrir **Características opcionales**
 <img src="img/26.png">
+
+- Fer clic a **Ver características**
+<img src="img/27.png">
+
+- Seleccionar **Servidor OpenSSH** i afegir-lo
+<img src="img/28.png">
 
 ### 7.2 Mètode PowerShell
 
@@ -232,7 +242,7 @@ Comprovar disponibilitat:
 Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 ```
 
-<img src="img/27.png">
+<img src="img/29.png">
 
 Instal·lar:
 
@@ -240,7 +250,7 @@ Instal·lar:
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
-<img src="img/28.png">
+<img src="img/30.png">
 
 Habilitar servei i inici automàtic:
 
@@ -249,16 +259,21 @@ Start-Service sshd
 Set-Service -Name sshd -StartupType 'Automatic'
 ```
 
-<img src="img/29.png">
+<img src="img/31.png">
 
-Desactivar temporalment el firewall de Windows Defender per permetre connexions SSH.
+Una vegada amb això fet, podrem connectar-nos des de la màquina Linux al Windows a través de ssh, però per defecte Windows bloqueja les connexions entrants així que deshabilitem el firewall de Microsoft Defender per a permetre la connexió.
+
+Una vegada amb el firewall desactivat, ja ens podem connectar satisfactòriament des del Linux.
 
 ```bash
 ssh usuari@192.168.56.201
 ```
 
-<img src="img/30.png">
-<img src="img/31.png">
+<img src="img/32.png">
+
+I podem veure com estem a dins del sistema
+
+<img src="img/33.png">
 
 ---
 
@@ -272,13 +287,17 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 sudo netplan apply
 ```
 
+<img src="img/34.png">
+
 Comprovem IP assignada:
 
 ```bash
 ip a
 ```
 
-Exemple: `10.0.2.6`  
+<img src="img/35.png">
+
+I podem veure que se li ha assignat l’IP **10.0.2.6** i serà la IP que haurà d’utilitzar el client Windows per a fer la connexió.
 
 Des del client Windows, creem un túnel dinàmic al port 9876:
 
@@ -286,25 +305,34 @@ Des del client Windows, creem un túnel dinàmic al port 9876:
 ssh -D 9876 usuari@10.0.2.6
 ```
 
-<img src="img/32.png">
+<img src="img/36.png">
 
 ---
 
 ## 9. Configuració del client per redirigir tràfic
 
-1. Obrir **Propiedades de Internet → Configuración de LAN → Opciones avanzadas**  
-2. Afegir port del túnel (9876)
+1. Obrir **Propiedades de Internet → Configuración de LAN**
 
-<img src="img/33.png">
-<img src="img/34.png">
-<img src="img/35.png">
+<img src="img/37.png">
+
+2. Clic a **Opciones avanzadas**
+   
+<img src="img/38.png">
+
+3. Afegir port del túnel (9876)
+
+<img src="img/39.png">
 
 ---
 
 ## 10. Comprovació del tràfic amb Wireshark
 
+Per a comprovar que el tràfic passa pel túnel haurem d'instal·lar l'eina Wireshark.
+
 - **Sense túnel:** tràfic normal, DNS directe, ports estàndard  
 
-<img src="img/36.png">
+<img src="img/40.png">
 
 - **Amb túnel:** tot el tràfic passa xifrat per SSH
+
+<img src="img/41.png">
