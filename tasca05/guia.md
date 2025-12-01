@@ -1,5 +1,9 @@
 # T05: Accés Remot. Connexió via SSH
 
+---
+
+## 1. Preparació de les màquines
+
 Creem les dues màquines virtuals, una amb Windows i l’altra amb Linux (Ubuntu). Una vegada dins de la màquina virtual d'Ubuntu, executarem les següents comandes per instal·lar SSH:
 
 ```bash
@@ -38,7 +42,7 @@ I comprovem que s’ha assignat correctament.
 
 Encenem la màquina Windows i afegim la segona interfície en **Host Only** perquè es puguin veure les dues màquines.  
 
-A dins de Windows, ens dirigim a “Ver conexiones de red” per editar la configuració de l'adaptador i comprovem que s’ha assignat correctament.
+A dins de Windows, ens dirigim a **“Ver conexiones de red”** per editar la configuració de l'adaptador i comprovem que s’ha assignat correctament.
 
 <img src="img/5.png">
 
@@ -47,6 +51,8 @@ I comprovem que **s’ha assignat correctament** i que es **veuen entre elles**.
 <img src="img/6.png">
 
 ---
+
+## 2. Connexió SSH inicial
 
 Un cop completades les passes anteriors, ja ens podem connectar a la màquina Ubuntu des de la terminal de Windows amb:
 
@@ -64,6 +70,8 @@ L’acceptem i ens connectem correctament, apareixent el terminal de la màquina
 
 ---
 
+## 3. Configuració del servidor SSH a Ubuntu
+
 Un cop dins de la màquina a través de SSH, podem editar l’arxiu de configuració:
 
 ```bash
@@ -71,16 +79,16 @@ sudo nano /etc/ssh/sshd_config
 ```
 <img src="img/9.png">
 
-Per exemple, podem:
+Podem:
 - Permetre o no connexions de root.
-- Canviar el port de connexió (per defecte el 22).
+- Canviar el port de connexió (per defecte 22).
 - Fer una llista d’usuaris autoritzats per connexió remota.
 
 Per deshabilitar l'accés SSH per a l'usuari root, modifiquem l’arxiu `/etc/ssh/sshd_config` i canviem les següents línies.
 
 <img src="img/10.png">
 
-Comprovem que només es pot iniciar sessió en root localment i no per SSH. Per a fer-ho haurem de canviar la contrasenya del root amb la següent comanda:
+Canviar la contrasenya del root:
 
 ```bash
 sudo passwd root
@@ -98,7 +106,7 @@ Però podem iniciar sessió de manera local sense problemes.
 
 ---
 
-Per permetre connexió remota només a usuaris autoritzats:
+## 4. Permetre connexió només a usuaris autoritzats
 
 Creem un nou usuari `usuari2`:
 
@@ -137,5 +145,166 @@ sudo systemctl restart ssh
 Ara, si intentem iniciar sessió amb `usuari2` no podrem, mentre que amb l’usuari `usuari` sí que funciona.
 
 <img src="img/16.png">
-
 <img src="img/17.png">
+
+---
+
+## 5. Connexió SSH sense contrasenya amb clau pública
+
+Al client Windows generem la clau:
+
+```bash
+ssh-keygen -t ed25519
+```
+
+<img src="img/18.png">
+
+La clau es guarda per defecte a:
+
+```
+C:\Users\usuari\.ssh
+```
+
+<img src="img/19.png">
+
+---
+
+Copiem la clau pública al servidor Ubuntu:
+
+```bash
+scp id_ed25519.pub usuari@192.168.56.200:/home/usuari
+```
+
+<img src="img/20.png">
+
+Al servidor, afegim la clau a l'arxiu `authorized_keys`:
+
+```bash
+cat /home/usuari/id_ed25519.pub >> ~/.ssh/authorized_keys
+```
+
+<img src="img/21.png">
+
+Ara podem fer SSH sense contrasenya:
+
+```bash
+ssh usuari@192.168.56.200
+```
+
+<img src="img/22.png">
+
+---
+
+## 6. Millorar la seguretat del servidor
+
+Deshabilitar autenticació per contrasenya:
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+Modificar:
+
+```
+PasswordAuthentication no
+```
+
+<img src="img/23.png">
+
+---
+
+## 7. Configurar Windows com a servidor SSH
+
+### 7.1 Mètode gràfic
+
+- Obrir **Características opcionales**  
+- Seleccionar **Servidor OpenSSH** i afegir-lo
+
+<img src="img/24.png">
+<img src="img/25.png">
+<img src="img/26.png">
+
+### 7.2 Mètode PowerShell
+
+Comprovar disponibilitat:
+
+```powershell
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+```
+
+<img src="img/27.png">
+
+Instal·lar:
+
+```powershell
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+```
+
+<img src="img/28.png">
+
+Habilitar servei i inici automàtic:
+
+```powershell
+Start-Service sshd
+Set-Service -Name sshd -StartupType 'Automatic'
+```
+
+<img src="img/29.png">
+
+Desactivar temporalment el firewall de Windows Defender per permetre connexions SSH.
+
+```bash
+ssh usuari@192.168.56.201
+```
+
+<img src="img/30.png">
+<img src="img/31.png">
+
+---
+
+## 8. Creació d’un túnel SSH
+
+Afegim una nova interfície NAT als dos equips.  
+Al Linux, assignem IP via DHCP editant:
+
+```bash
+sudo nano /etc/netplan/50-cloud-init.yaml
+sudo netplan apply
+```
+
+Comprovem IP assignada:
+
+```bash
+ip a
+```
+
+Exemple: `10.0.2.6`  
+
+Des del client Windows, creem un túnel dinàmic al port 9876:
+
+```bash
+ssh -D 9876 usuari@10.0.2.6
+```
+
+<img src="img/32.png">
+
+---
+
+## 9. Configuració del client per redirigir tràfic
+
+1. Obrir **Propiedades de Internet → Configuración de LAN → Opciones avanzadas**  
+2. Afegir port del túnel (9876)
+
+<img src="img/33.png">
+<img src="img/34.png">
+<img src="img/35.png">
+
+---
+
+## 10. Comprovació del tràfic amb Wireshark
+
+- **Sense túnel:** tràfic normal, DNS directe, ports estàndard  
+
+<img src="img/36.png">
+
+- **Amb túnel:** tot el tràfic passa xifrat per SSH
