@@ -280,14 +280,18 @@ I podem veure com estem a dins del sistema
 ## 8. Creació d’un túnel SSH
 
 Afegim una nova interfície NAT als dos equips.  
-Al Linux, assignem IP via DHCP editant:
+
+Al Linux, modifiquem l’arxiu `/etc/netplan/50-cloud-init.yaml` de manera que afegim la nova interfície perquè se li assigni una IP a través de DHCP:
 
 ```bash
 sudo nano /etc/netplan/50-cloud-init.yaml
-sudo netplan apply
 ```
 
 <img src="img/34.png">
+
+```bash
+sudo netplan apply
+```
 
 Comprovem IP assignada:
 
