@@ -188,7 +188,7 @@ Ens dirigim a la carpeta **.ssh** i podem veure que hi ha un arxiu anomenat **au
 Al servidor, afegim la clau a l'arxiu `authorized_keys`:
 
 ```bash
-cat /home/usuari/id_ed25519.pub >> ~/.ssh/authorized_keys
+cat /home/usuari/id_ed25519.pub >> .ssh/authorized_keys
 ```
 
 <img src="img/23.png">
