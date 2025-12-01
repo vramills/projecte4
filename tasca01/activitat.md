@@ -72,3 +72,18 @@ Com a **mitjà de còpia de seguretat**, recomanaria:
 - Al **NAS** la còpia més recent, ja que permet una restauració fàcil.  
 - Als discs **durs externs** faria les còpies completes setmanals, guardades en un lloc segur dins l’empresa.  
 - I al **núvol** faria còpies completes mensuals, fora del lloc, per assegurar redundància i protecció davant desastres majors.
+
+---
+
+## Fase 2: Treball per parelles
+
+### 2. Elaboració d'una Proposta Unificada
+Heu de consensuar i dissenyar el vostre propi **Esquema 3-2-1 de Còpies** (3 còpies, 2 mitjans, 1 fora de lloc) basat en els requisits del cas.
+
+| Element | Proposta de la Parella | Justificació |
+|--------|-----------------------|-------------|
+| **Dades Crítiques** | - Bases de Dades (Comptabilitat i Clients) <br> - Documents de Projectes <br> - Carpetes Personals <br> - Carpeta *Documents* dels clients Windows | Les BD tenen dades de canvi constant i necessiten RTO/RPO molt baixos. Documents de Projectes i Carpetes Personals tenen gran volum però menys criticitat temporal. Els equips només necessiten arxius puntuals. |
+| **Periodicitat (BD)** | - Incremental cada 4 hores <br> - Diferencial diària <br> - Completa setmanal <br> - Completa mensual | Garanteix la pèrdua màxima de 4 h (RPO). Les còpies diàries i setmanals generen punts de restauració estables i historial mensual. |
+| **Tipus de Còpia (BD)** | - Incrementals per capturar canvis constants <br> - Diferencial setmanal per restauració ràpida <br> - Completes com a base fiable | Restauració flexible: les incrementals cobreixen el dia, la diferencial facilita restauració i la completa ofereix punt segur. |
+| **Mitjà 1 (Local)** | - NAS intern per a còpies incrementals i diferencials | Restauració ràpida i centralitzada. Alta velocitat en xarxa interna i snapshots. |
+| **Mitjà 2 (Extern)** | - Disc dur extern per còpia setmanal <br> - Núvol per còpia mensual | Compleix la regla 3-2-1: mitjà diferent i còpia off-site protegida davant robatori, incendi o desastre físic. |
