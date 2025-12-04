@@ -116,7 +116,7 @@
 
 ---
 
-## 5. Prova de la còpia de seguretat
+## 5. Prova de la còpia de seguretat local
 
 1. A la carpeta **Documentos**, creem una carpeta **Prova** amb un arxiu **Important.txt**.  
 
@@ -160,57 +160,84 @@
 
 ## 7. Configuració de còpia a Google Drive
 
-1. Repetim el procés de configuració de còpia, però seleccionant **Google Drive** com a destí.  
+1. Configurem les còpies cada dia a les 18:00 en un medi extern, en aquest cas **Google Drive**.  
+   - Seguim el mateix procediment que amb l’altre còpia.  
 
-   <img src="img/36.png">  
+   <img src="img/36.png">
+
+2. A diferència de l’altra còpia, el destí serà **Google Drive**.  
+
    <img src="img/37.png">
 
-2. Assignem la carpeta **Documentos** com a origen i fem clic a **AuthID** per vincular el compte de Google.  
+3. Posem de ruta de la còpia la carpeta **Documentos** i fem clic a **AuthID** per vincular el nostre compte.  
 
-   <img src="img/38.png">  
-   <img src="img/39.png">  
-   <img src="img/40.png">  
+   <img src="img/38.png">
+
+4. En fer clic en **AuthID** se'ns obre una finestra per vincular el compte de Google on volem fer la còpia.  
+
+   <img src="img/39.png">
+
+5. Autoritzem que **Duplicati tingui permisos** per administrar el nostre Google Drive.  
+
+   <img src="img/40.png">
+
+6. Un cop vinculat el compte, fem clic de nou a **AuthID** per obtenir el codi d’autorització.  
+
    <img src="img/41.png">
 
-3. Copiem el codi d’autorització i l’enganxem a l’entrada de **código de autorización**.  
+7. Se’ns obre una web on podrem veure el codi que hem d’utilitzar.  
 
-   <img src="img/42.png">  
+   <img src="img/42.png">
+
+8. Enganxem el codi a l’entrada **código de autorización**.  
+
    <img src="img/43.png">
 
-4. Duplicati detecta que la carpeta **Documents** no existeix a Google Drive i ens pregunta si volem crear-la. Confirmem amb **Sí**.  
+9. Duplicati detecta que la carpeta **Documents** dins Google Drive no existeix i ens pregunta si volem crear-la. Li diem **Sí**.  
 
    <img src="img/44.png">
 
-5. Configurem l’origen i la programació: **cada dia a les 18:00**.  
+10. Un cop amb la carpeta destí configurada, seleccionem l’origen a copiar (**Documentos**).  
 
-   <img src="img/45.png">  
-   <img src="img/46.png">  
-   <img src="img/47.png">
+    <img src="img/45.png">
 
-6. Iniciem la primera còpia amb **Start**.  
+11. Configurem la còpia perquè es faci **cada dia a les 18:00**.  
 
-   <img src="img/48.png">  
-   <img src="img/49.png">
+    <img src="img/46.png">
 
----
+12. Deixem les configuracions per defecte.  
 
-## 8. Restauració de la còpia a Google Drive
+    <img src="img/47.png">
 
-1. Esborrem la carpeta **Prova** dins **Documentos** per provar la restauració.  
+13. Iniciem la primera còpia prement **Start**.  
 
-   <img src="img/50.png">
+    <img src="img/48.png">
 
-2. Anem a **Restores → Start** i seleccionem la còpia **Còpia Google Drive**, fent clic a **Restore**.  
+14. Un cop completada, podrem veure que s’ha creat la carpeta **Documents** a Google Drive amb els arxius de la còpia.  
 
-   <img src="img/51.png">  
-   <img src="img/52.png">
+    <img src="img/49.png">
 
-3. Seleccionem la carpeta **Prova** i indiquem restaurar **a la ubicació original**.  
+15. Esborrem la carpeta **Prova** dins **Documentos** per provar la restauració.  
 
-   <img src="img/53.png">  
-   <img src="img/54.png">
+    <img src="img/50.png">
 
-4. La restauració es completa correctament.  
+16. Per iniciar la restauració, anem a **Restores → Start**.  
 
-   <img src="img/55.png">  
-   <img src="img/56.png">
+    <img src="img/51.png">
+
+17. Seleccionem la còpia de seguretat **Còpia Google Drive** i fem clic a **Restore**.  
+
+    <img src="img/52.png">
+
+18. Seleccionem la carpeta **Prova** per restaurar-la.  
+
+    <img src="img/53.png">
+
+19. Li indiquem que volem que els arxius es restaurin en la **ubicació original**.  
+
+    <img src="img/54.png">
+
+20. Veiem que la restauració dels arxius s’ha completat correctament.  
+
+    <img src="img/55.png">
+    <img src="img/56.png">
