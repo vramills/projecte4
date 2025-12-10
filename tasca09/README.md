@@ -24,6 +24,15 @@ La solució escollida: **NFSv3**, la més ràpida i eficient per entorns Linux s
 
 ---
 
+## 📂  Estructura de carpetes
+
+Dins la carpeta `tasca09` es troben els següents arxius:
+
+- `activitat.md`: Documentació de la creació del servidor fitxers Linux.
+
+---
+
 ## 📎 Documents
 
-- La descripció completa de la tasca i exemples addicionals es troba a: [Projecte04-NFS](https://github.com/SMX2n/Projecte04-NFS)
+Podeu consultar tots els documents fent clic al document corresponent:
+- Al arxiu [activitat](activitat.md) podeu trobar la activitat.

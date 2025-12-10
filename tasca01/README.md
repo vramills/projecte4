@@ -63,6 +63,8 @@ Dins la carpeta `tasca01` es troben els següents arxius:
 
 - `activitat.md`: Activitat centrada en el disseny i planificació d’un sistema eficient de còpies de seguretat.
 
+---
+
 ## 📎  Documents
 Podeu consultar tots els documents fent clic al document corresponent:
 - Al arxiu [activitat](activitat.md) podeu trobar la activitat.
