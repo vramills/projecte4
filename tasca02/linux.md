@@ -1,4 +1,4 @@
-# T05: Còpies de Seguretat a Linux amb Duplicity
+# T02: Còpies de Seguretat a Linux amb Duplicity
 
 Ara començarem a fer les còpies de seguretat a Linux amb un Ubuntu Server i amb el disc dur addicional de 10 GB.
 
