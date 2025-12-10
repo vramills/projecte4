@@ -89,7 +89,7 @@ sudo passwd usuari3
 
 ## 5. Creació d’arxius de prova
 
-Crearem 4 arxius de 10 MB a la carpeta home del usuari principal.
+Crearem 4 arxius de 10 MB a la carpeta home de l'usuari principal.
 
 <img src="img/65.png">
 
@@ -119,15 +119,13 @@ Esborrem els fitxers de prova:
 rm arxiu*
 ```
 
-<img src="img/68.png">
-
 Fem la restauració:
 
 ```bash
 sudo duplicity restore file:///media/backup/ /home/usuari
 ```
 
-<img src="img/69.png">
+<img src="img/68.png">
 
 ---
 
@@ -135,11 +133,11 @@ sudo duplicity restore file:///media/backup/ /home/usuari
 
 Afegim un nou arxiu de 4 MB:
 
-<img src="img/70.png">
+<img src="img/69.png">
 
 Fem una nova còpia: detecta només 1 fitxer nou i fa una còpia incremental.
 
-<img src="img/71.png">
+<img src="img/70.png">
 
 ---
 
@@ -171,7 +169,7 @@ Donem permisos d’execució:
 sudo chmod +x fullbackup.sh
 ```
 
-<img src="img/72.png">
+<img src="img/71.png">
 
 ---
 
@@ -183,7 +181,7 @@ Programem el cron com a root perquè s’executi diumenges a les 23:00.
 sudo crontab -e
 ```
 
-<img src="img/73.png">
+<img src="img/72.png">
 
 Creem l’script `incrementalbackup.sh` per a còpies incrementals:
 
@@ -205,7 +203,7 @@ Donem permisos d’execució:
 sudo chmod +x incrementalbackup.sh
 ```
 
-<img src="img/74.png">
+<img src="img/73.png">
 
 Programem cron perquè s’executi de dilluns a dissabte a les 23:00:
 
@@ -213,4 +211,4 @@ Programem cron perquè s’executi de dilluns a dissabte a les 23:00:
 sudo crontab -e
 ```
 
-<img src="img/75.png">
+<img src="img/74.png">
