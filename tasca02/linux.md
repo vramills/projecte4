@@ -44,8 +44,15 @@ sudo mkfs.xfs /dev/sdb1
 
 Un cop amb el disc dur formatat, creem el punt de muntatge manualment a `/media/backup`.
 
+Creem la carpeta.
+
 ```bash
 sudo mkdir -p /media/backup
+```
+
+I després fem el muntatge manualment.
+
+```bash
 sudo mount /dev/sdb1 /media/backup
 ```
 
@@ -141,7 +148,7 @@ Fem una nova còpia: detecta només 1 fitxer nou i fa una còpia incremental.
 
 ---
 
-## 9. Scripts de còpia automàtica
+## 9. Script de còpia automàtica
 
 Desmuntem la unitat del backup:
 
@@ -183,6 +190,8 @@ sudo crontab -e
 
 <img src="img/72.png">
 
+## 11. Script de còpia automàtica incremental
+
 Creem l’script `incrementalbackup.sh` per a còpies incrementals:
 
 ```bash
@@ -204,6 +213,8 @@ sudo chmod +x incrementalbackup.sh
 ```
 
 <img src="img/73.png">
+
+## 12. Programació amb CRON
 
 Programem cron perquè s’executi de dilluns a dissabte a les 23:00:
 
