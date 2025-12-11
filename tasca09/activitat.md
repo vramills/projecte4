@@ -101,9 +101,7 @@ Per a fer-ho haurem de dirigir-nos a la botiga de **Software** i buscarem la apl
 
 <img src="img/9.png">
 
-En obrir-la trobem el nostre usuari actual i podem veure que podem afegir un nou usuari o bé gestionar els grups.
-
-Pel que crearem els mateixos usuaris i grups que en el servidor, intentant mantenir els mateixos UID i GID.
+Pel que crearem els mateixos usuaris i grups que en el servidor, intentant mantenir els mateixos `UID` i `GID`.
 
 Per a fer-ho haurem de donar-li a **Manage Groups** per a crears els grups `devs` i `admins`.
 
@@ -125,24 +123,24 @@ Una vegada amb els grups creats el próxim pas es crear els usuaris `dev01` i `a
 
 Pel que tornarem al menú principal i farem clic a **Add**
 
-<img src="img/9.png">
+<img src="img/14.png">
 
 En donar-li crearem el primer usuari `dev01`.
 
-<img src="img/14.png">
+<img src="img/15.png">
 
 I li assignarem una contrassenya.
 
-<img src="img/15.png">
+<img src="img/16.png">
 
 I farem el mateix amb el segon usuari `admin01`.
 
-<img src="img/16.png">
 <img src="img/17.png">
+<img src="img/18.png">
 
 I finalment podem veure que s'han creat correctament
 
-<img src="img/18.png">
+<img src="img/19.png">
 
 Però haurem d'afegir-los als grups corresponents.
 
@@ -150,11 +148,11 @@ Per a fer-ho haurem de editar les opcions dels grups i seleccionar en la casella
 
 En aquest cas el grup `devs` a l'usuari `dev01`.
 
-<img src="img/19.png">
+<img src="img/20.png">
 
 I després el grup `admins` a l'usuari `admin01`.
 
-<img src="img/20.png">
+<img src="img/21.png">
 
 ---
 
@@ -168,7 +166,7 @@ sudo apt install nfs-kernel-server -y
 
 I veiem que s'ha instal·lat correctament.
 
-<img src="img/21.png">
+<img src="img/22.png">
 
 Ara caldrà configurar l'exportació dels directoris amb les opcions corresponents.
 
@@ -178,7 +176,7 @@ Per a fer-ho haurem de editar l'arxiu `/etc/exports`.
 sudo nano /etc/exports
 ```
 
-<img src="img/22.png">
+<img src="img/23.png">
 
 I afegim la seguent línia:
 
@@ -186,7 +184,7 @@ I afegim la seguent línia:
 /srv/nfs 192.168.56.105(rw,sync)
 ```
 
-<img src="img/23.png">
+<img src="img/24.png">
 
 Un cop configurat, ja podem inicir el servei.
 
@@ -196,7 +194,7 @@ sudo systemctl start nfs-kernel-server
 
 I comprovem què estem compartint via NFS.
 
-<img src="img/24.png">
+<img src="img/25.png">
 
 Ara cal instal·lar el client NFS al Zorin.
 
@@ -210,7 +208,7 @@ I comprovarem que té accés al recurs del servidor i podem veure que el veu cor
 sudo showmount -e 192.168.56.203
 ```
 
-<img src="img/25.png">
+<img src="img/26.png">
 
 Ara per a podem mapejar la carpeta, haurem de crear-la primer.
 
@@ -226,7 +224,7 @@ sudo mount -t nfs 192.168.56.203:/srv/nfs /srv/remot
 
 I podem veure que la carpeta del servidor està disponible.
 
-<img src="img/26.png">
+<img src="img/27.png">
 
 ---
 
