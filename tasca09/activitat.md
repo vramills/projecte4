@@ -340,6 +340,43 @@ sudo mkdir /mnt/dev_projects
 I per a poder accedir al recurs, haurem d'utilitzar la comanda `mount` per a muntar l'unitat a `/mnt/dev_projects`.
 
 ```bash
-sudo mount -t nfs 192.168.56.203:/srv/nfs/dev_projects  /mnt/dev_projects
+sudo mount -t nfs 192.168.56.203:/srv/nfs/dev_projects /mnt/dev_projects
 ```
 
+### 1. Prova d'accés desde la xarxa d'administració
+
+En intentar crear un arxiu com a `dev01` veiem que s'ha creat satisfactòriament, ja que en estar a la `xarxa d'adminstració`, tenim permisos per a `llegir` i `escriure`.
+
+<img src="img/32.png">
+
+### 2. Prova d'accés desde l'equip de consultors amb l'usuari `dev01`
+
+Ara, per a fer la prova des de un `equip de consultors`, haurem de canviar l'IP del client a la IP que hem indicat a dins de l'arxiu `/etc/exports`, en aquest cas `192.168.56.200`.
+
+Per a fer-ho ens dirigirem a la configuració de xarxa del client Zorin i editarem la IP assiganada automàticament pel DHCP per l'IP `192.168.56.200` de manera manual.
+
+<img src="img/33.png">
+
+I comprovem que s'ha canviat correctament:
+
+<img src="img/34.png">
+
+Una vegada amb l'IP cambiada haurem de muntar i desmuntar l'unitat al client.
+
+```bash
+sudo umount /mnt/dev_projects 
+sudo mount -t nfs 192.168.56.203:/srv/nfs/dev_projects /mnt/dev_projects 
+```
+
+I podem veure que com tenim l'IP de l'`equip de consultors` i hem definit que només tingui permisos de `lectura` ens surt l'error conforme `no podem escriure`.
+
+<img src="img/35.png">
+
+### 3. Prova d'accés desde l'equip de consultors amb l'usuari `admin01`
+
+I ara provarem de crear un arxiu al mateix directori amb l'usuari `admin01`. I podem veure que no pot escriure ja que no es membre del grup `devs`.
+
+
+<img src="img/36.png">
+
+## Fase 5: Muntatge Automàtic amb /etc/fstab
