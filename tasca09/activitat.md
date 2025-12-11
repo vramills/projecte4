@@ -285,7 +285,7 @@ sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 
 ### 1. El Dilema del `root_squash`
 
-En intentar accedir a `/mnt/admin_tools` com a `root`, no ens deixa, ja que per defecte en NFS està activada l’opció `root_squash`. Aquesta opció fa que l’usuari root del client es sigui `nobody`, la qual cosa que impedeix que pugui modificar fitxers amb privilegis de superusuari al servidor.
+En intentar accedir a `/mnt/admin_tools` com a `root`, no ens deixa, ja que per defecte en NFS està activada l’opció `root_squash`. Aquesta opció fa que l’usuari root del client es sigui `nobody`, la qual cosa impedeix que es puguin modificar fitxers amb privilegis de superusuari al servidor.
 
 Per això podem veure que amb l'usuari `root` no podem accedir a l'unitat compartida.
 
@@ -295,21 +295,15 @@ Mentre que amb l'usuari `admin01` si que podem, ja que forma part del grup propi
 
 <img src="img/30.png">
 
-<!-- Pero encara no tenim permisos, ja que per defecte en NFS, l'opció `root_squash` fa que l'usuari root del client sigui `nfsnobody`, el que evita que pugui modificar fitxers amb privilegis de superusuari al servidor.
+### 2. Sol·lució del Dilema del `root_squash`
 
-Per això en intentar accedir per a crear un fitxer ens surt el següent error:
+Per a sol·lucionar-ho haurem de configurar que l'exportació del directori `/srv/nfs/admin_tools` tingui l'opció de `no_root_squash`.
 
-<img src="img/26.png">
-
-Per a sol·lucionar-ho haurem de configurar una exportació del directori `/srv/nfs/admin_tools` incluent l'opció de `no_root_squash`.
-
-Per a fer-ho haurem de modificar l'arxiu `/etc/exports`.
+Haurem de modificar l'arxiu `/etc/exports`.
 
 ```bash
 /srv/nfs/admin_tools 192.168.56.105(rw,sync,no_root_squash)
 ```
-
-<img src="img/27.png">
 
 Reiniciem el servei.
 
@@ -317,14 +311,13 @@ Reiniciem el servei.
 sudo systemctl restart nfs-kernel-server
 ```
 
-I muntem la nova unitat al client.
+I muntem i desmuntem l'unitat al client.
 
 ```bash
-sudo mkdir /mnt/admin_tools
+sudo umount /mnt/admin_tools
 sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 ```
 
-I podem veure que ja ens deixa accedir i crear arxius a dins de la carpeta.
+I podem veure que ja podem accedir com a `root`:
 
-<img src="img/28.png">
- -->
+<img src="img/31.png">
