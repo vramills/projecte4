@@ -133,6 +133,9 @@ sudo duplicity restore file:///media/backup/ /home/usuari
 ```
 
 <img src="img/68.png">
+
+I podem veure que s'han restaurat correctament.
+
 <img src="img/69.png">
 
 ---
