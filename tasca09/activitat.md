@@ -26,7 +26,7 @@ sudo apt update && sudo apt upgrade -y
 
 ## Fase 2: Preparació Ubuntu Server (Servidor)
 
-### Creació dels grups `devs` i `admins`.
+### 1. Creació dels grups `devs` i `admins`
 
 Començarem amb la preparació del servidor, i per això crearem dos grups per al client; devs i admins.
 
@@ -44,7 +44,7 @@ cat /etc/group | grep -E "devs|admins"
 
 ---
 
-### Creació dels usuaris `dev01` i `admin01`.
+### 2. Creació dels usuaris `dev01` i `admin01`
 
 Creem un usuari `dev01` que és membre del grup `devs`.
 
@@ -74,7 +74,7 @@ cat /etc/passwd | grep -e admin01
 
 ---
 
-### Creació dels directoris `dev_projects` i `admin_tools`.
+### 3. Creació dels directoris `dev_projects` i `admin_tools`
 
 Ara creem un directori per als projectes de desenvolupament.
 
@@ -94,7 +94,7 @@ sudo mkdir -pv /srv/nfs/admin_tools
 
 ---
 
-### Modificació dels permisos.
+### 4. Modificació dels permisos
 
 I modifiquem els permisos de manera que els developers tinguin control total sobre els seus projectes i els administradors sobre les seves eines.
 
@@ -117,7 +117,7 @@ Per a fer-ho haurem de dirigir-nos a la botiga de **Software** i buscarem la apl
 
 ---
 
-### Creació dels grups `devs` i `admins`.
+### 1. Creació dels grups `devs` i `admins`
 
 Pel que crearem els mateixos usuaris i grups que en el servidor, intentant mantenir els mateixos `UID` i `GID`.
 
@@ -139,7 +139,7 @@ I segon grup `admins` amb GID `1002`.
 
 ---
 
-### Creació dels usuaris `dev01` i `admin01`.
+### 2. Creació dels usuaris `dev01` i `admin01`
 
 Una vegada amb els grups creats el próxim pas es crear els usuaris `dev01` i `admin01`.
 
@@ -282,6 +282,18 @@ I per a poder accedir al recurs, haurem d'utilitzar la comanda `mount` per a mun
 ```bash
 sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 ```
+
+### El Dilema del `root_squash`
+
+En intentar accedir a `/mnt/admin_tools` com a `root`, no ens deixa, ja que per defecte en NFS està activada l’opció `root_squash`. Aquesta opció fa que l’usuari root del client es sigui `nobody`, la qual cosa que impedeix que pugui modificar fitxers amb privilegis de superusuari al servidor.
+
+Per això podem veure que amb l'usuari `root` no podem accedir a l'unitat compartida.
+
+<img src="img/29.png">
+
+Mentre que amb l'usuari `admin01` si que podem, ja que forma part del grup propietari de la carpeta `admins`.
+
+<img src="img/30.png">
 
 <!-- Pero encara no tenim permisos, ja que per defecte en NFS, l'opció `root_squash` fa que l'usuari root del client sigui `nfsnobody`, el que evita que pugui modificar fitxers amb privilegis de superusuari al servidor.
 
