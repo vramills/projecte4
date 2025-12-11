@@ -133,6 +133,7 @@ sudo duplicity restore file:///media/backup/ /home/usuari
 ```
 
 <img src="img/68.png">
+<img src="img/69.png">
 
 ---
 
@@ -140,11 +141,11 @@ sudo duplicity restore file:///media/backup/ /home/usuari
 
 Afegim un nou arxiu de 4 MB:
 
-<img src="img/69.png">
+<img src="img/70.png">
 
 Fem una nova còpia: detecta només 1 fitxer nou i fa una còpia incremental.
 
-<img src="img/70.png">
+<img src="img/71.png">
 
 ---
 
@@ -176,7 +177,7 @@ Donem permisos d’execució:
 sudo chmod +x fullbackup.sh
 ```
 
-<img src="img/71.png">
+<img src="img/72.png">
 
 ---
 
@@ -188,7 +189,7 @@ Programem el cron com a root perquè s’executi diumenges a les 23:00.
 sudo crontab -e
 ```
 
-<img src="img/72.png">
+<img src="img/73.png">
 
 ## 11. Script de còpia automàtica incremental
 
@@ -212,7 +213,7 @@ Donem permisos d’execució:
 sudo chmod +x incrementalbackup.sh
 ```
 
-<img src="img/73.png">
+<img src="img/74.png">
 
 ## 12. Programació amb CRON
 
@@ -222,4 +223,4 @@ Programem cron perquè s’executi de dilluns a dissabte a les 23:00:
 sudo crontab -e
 ```
 
-<img src="img/74.png">
+<img src="img/75.png">
