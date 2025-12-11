@@ -133,9 +133,12 @@ I li assignarem una contrassenya.
 
 <img src="img/16.png">
 
-I farem el mateix amb el segon usuari `admin01`.
+Després crearem el segon usuari `admin01`.
 
 <img src="img/17.png">
+
+I també li assignarem una contrassenya.
+
 <img src="img/18.png">
 
 I finalment podem veure que s'han creat correctament
