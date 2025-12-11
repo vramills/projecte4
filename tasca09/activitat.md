@@ -26,6 +26,8 @@ sudo apt update && sudo apt upgrade -y
 
 ## Fase 2: Preparació Ubuntu Server (Servidor)
 
+### Creació dels grups `devs` i `admins`.
+
 Començarem amb la preparació del servidor, i per això crearem dos grups per al client; devs i admins.
 
 ```bash
@@ -39,6 +41,10 @@ cat /etc/group | grep -E "devs|admins"
 ```
 
 <img src="img/3.png">
+
+---
+
+### Creació dels usuaris `dev01` i `admin01`.
 
 Creem un usuari `dev01` que és membre del grup `devs`.
 
@@ -66,6 +72,10 @@ cat /etc/passwd | grep -e admin01
 
 <img src="img/5.png">
 
+---
+
+### Creació dels directoris `dev_projects` i `admin_tools`.
+
 Ara creem un directori per als projectes de desenvolupament.
 
 ```bash
@@ -81,6 +91,10 @@ sudo mkdir -pv /srv/nfs/admin_tools
 ```
 
 <img src="img/7.png">
+
+---
+
+### Modificació dels permisos.
 
 I modifiquem els permisos de manera que els developers tinguin control total sobre els seus projectes i els administradors sobre les seves eines.
 
@@ -101,6 +115,10 @@ Per a fer-ho haurem de dirigir-nos a la botiga de **Software** i buscarem la apl
 
 <img src="img/9.png">
 
+---
+
+### Creació dels grups `devs` i `admins`.
+
 Pel que crearem els mateixos usuaris i grups que en el servidor, intentant mantenir els mateixos `UID` i `GID`.
 
 Per a fer-ho haurem de donar-li a **Manage Groups** per a crears els grups `devs` i `admins`.
@@ -118,6 +136,10 @@ I fiquem el nom del primer grup `devs` amb GID `1001`.
 I segon grup `admins` amb GID `1002`.
 
 <img src="img/13.png">
+
+---
+
+### Creació dels usuaris `dev01` i `admin01`.
 
 Una vegada amb els grups creats el próxim pas es crear els usuaris `dev01` i `admin01`.
 
@@ -145,11 +167,7 @@ I finalment podem veure que s'han creat correctament
 
 <img src="img/19.png">
 
-Però haurem d'afegir-los als grups corresponents.
-
-Per a fer-ho haurem de editar les opcions dels grups i seleccionar en la casella **Group Members** al usuari corresponent.
-
-En aquest cas el grup `devs` a l'usuari `dev01`.
+Ara haurem d'afegir-los als grups corresponents. En aquest cas el grup `devs` a l'usuari `dev01`.
 
 <img src="img/20.png">
 
@@ -159,7 +177,7 @@ I després el grup `admins` a l'usuari `admin01`.
 
 ---
 
-## Instal·lació i configuració del servei NFS
+## Fase 2: Instal·lació i configuració del servei NFS (Servidor)
 
 Ara instal·larem el servidor NFS i totes les seves dependències:
 
@@ -198,6 +216,10 @@ sudo systemctl start nfs-kernel-server
 I comprovem què estem compartint via NFS.
 
 <img src="img/25.png">
+
+---
+
+## Fase 2: Instal·lació i configuració del servei NFS (Client)
 
 Ara cal instal·lar el client NFS al Zorin.
 
