@@ -32,7 +32,7 @@ Començarem amb la preparació del servidor, i per això crearem dos grups per a
 sudo groupadd devs && sudo groupadd admins
 ```
 
-I comprovem que s’han creat correctament amb la comanda grep.
+I comprovem que s’han creat correctament amb la comanda `grep`.
 
 ```bash
 cat /etc/group | grep -E "devs|admins"
@@ -40,13 +40,13 @@ cat /etc/group | grep -E "devs|admins"
 
 <img src="img/3.png">
 
-Creem un usuari dev01 que és membre del grup devs.
+Creem un usuari `dev01` que és membre del grup `devs`.
 
 ```bash
 sudo useradd -m -s /bin/bash -G devs dev01
 ```
 
-I comprovem que s’han creat correctament amb la comanda grep.
+I comprovem que s’han creat correctament amb la comanda `grep`.
 
 ```bash
 cat /etc/passwd | grep -e dev01
@@ -54,7 +54,7 @@ cat /etc/passwd | grep -e dev01
 
 <img src="img/4.png">
 
-I fem el mateix amb admin01 i el grup admins.
+I fem el mateix amb `admin01` i el grup `admins`.
 
 ```bash
 sudo useradd -m -s /bin/bash -G admins admin01
