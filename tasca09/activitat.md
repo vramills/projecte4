@@ -283,6 +283,8 @@ I per a poder accedir al recurs, haurem d'utilitzar la comanda `mount` per a mun
 sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 ```
 
+---
+
 ### 1. El Dilema del `root_squash`
 
 En intentar accedir a `/mnt/admin_tools` com a `root`, no ens deixa, ja que per defecte en NFS està activada l’opció `root_squash`. Aquesta opció fa que l’usuari root del client es sigui `nobody`, la qual cosa impedeix que es puguin modificar fitxers amb privilegis de superusuari al servidor.
@@ -294,6 +296,8 @@ Per això podem veure que amb l'usuari `root` no podem accedir a l'unitat compar
 Mentre que amb l'usuari `admin01` si que podem, ja que forma part del grup propietari de la carpeta `admins`.
 
 <img src="img/30.png">
+
+---
 
 ### 2. Sol·lució del Dilema del `root_squash`
 
@@ -321,3 +325,8 @@ sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 I podem veure que ja podem accedir com a `root`:
 
 <img src="img/31.png">
+
+---
+
+## Fase 4: L'Exportació de Desenvolupament (Permisos rw vs ro)
+
