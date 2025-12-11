@@ -207,10 +207,10 @@ I afegim la seguent línia:
 
 <img src="img/24.png">
 
-Un cop configurat, ja podem inicir el servei.
+Un cop configurat, ja reiniciem el servei al servidor.
 
 ```bash
-sudo systemctl start nfs-kernel-server
+sudo systemctl restart nfs-kernel-server
 ```
 
 I comprovem què estem compartint via NFS.
@@ -235,7 +235,7 @@ sudo showmount -e 192.168.56.203
 
 <img src="img/26.png">
 
-Ara per a podem mapejar la carpeta, haurem de crear-la primer.
+Ara per a podem mapejar la carpeta, però haurem de crear-la primer.
 
 ```bash
 sudo mkdir /srv/remot
@@ -263,7 +263,25 @@ Es per això que exportarem el directori `/srv/nfs/admin_tools` amb les opcions 
 /srv/nfs/admin_tools 192.168.56.105(rw,sync)
 ```
 
+<img src="img/28.png">
 
+Un cop configurat, ja reiniciem el servei al servidor.
+
+```bash
+sudo systemctl restart nfs-kernel-server
+```
+
+Ens dirigim al client i ja podem mapejar la carpeta, però haurem de crear-la primer.
+
+```bash
+sudo mkdir /mnt/admin_tools
+```
+
+I per a poder accedir al recurs, haurem d'utilitzar la comanda `mount` per a muntar l'unitat a `/mnt/admin_tools`.
+
+```bash
+sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
+```
 
 <!-- Pero encara no tenim permisos, ja que per defecte en NFS, l'opció `root_squash` fa que l'usuari root del client sigui `nfsnobody`, el que evita que pugui modificar fitxers amb privilegis de superusuari al servidor.
 
