@@ -330,3 +330,33 @@ I podem veure que ja podem accedir com a `root`:
 
 ## Fase 4: L'Exportació de Desenvolupament (Permisos rw vs ro)
 
+Ara editarem `/etc/exports` per afegir dues exportacions per al mateix directori. Fent que el client d'administració amb IP `192.168.56.100` hi pugui escriure, però que el client de consultors amb IP `192.168.56.200` només pugui llegir.
+
+Haurem de modificar l'arxiu `/etc/exports` i afegir les següents línes:
+
+```bash
+/srv/nfs/dev_projects 192.168.56.100(rw,sync,no_root_squash)
+```
+
+```bash
+/srv/nfs/dev_projects 192.168.56.200(r,sync,no_root_squash)
+```
+
+Una vegada amb les línes afegides, reiniciem el servei.
+
+```bash
+sudo systemctl restart nfs-kernel-server
+```
+
+Una vegada a dins del client, haurem de mapejar la carpeta, però haurem de crear-la primer.
+
+```bash
+sudo mkdir /mnt/dev_projects 
+```
+
+I per a poder accedir al recurs, haurem d'utilitzar la comanda `mount` per a muntar l'unitat a `/mnt/dev_projects`.
+
+```bash
+sudo mount -t nfs 192.168.56.203:/srv/nfs/dev_projects  /mnt/dev_projects
+```
+
