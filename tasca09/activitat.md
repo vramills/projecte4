@@ -287,7 +287,7 @@ sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 
 ### 1. El Dilema del `root_squash`
 
-En intentar accedir a `/mnt/admin_tools` com a `root`, no ens deixa, ja que per defecte en NFS està activada l’opció `root_squash`. Aquesta opció fa que l’usuari root del client es sigui `nobody`, la qual cosa impedeix que es puguin modificar fitxers amb privilegis de superusuari al servidor.
+En intentar accedir a `/mnt/admin_tools` com a `root`, no ens deixa, ja que per defecte en NFS està activada l’opció `root_squash`. Aquesta opció fa que l’usuari `root` del client es sigui `nobody`, la qual cosa impedeix que es puguin modificar fitxers amb privilegis de superusuari al servidor.
 
 Per això podem veure que amb l'usuari `root` no podem accedir a l'unitat compartida.
 
@@ -301,7 +301,7 @@ Mentre que amb l'usuari `admin01` si que podem, ja que forma part del grup propi
 
 ### 2. Sol·lució del Dilema del `root_squash`
 
-Per a sol·lucionar-ho haurem de configurar que l'exportació del directori `/srv/nfs/admin_tools` tingui l'opció de `no_root_squash`.
+Per a sol·lucionar-ho haurem de configurar que l'exportació del directori `/srv/nfs/admin_tools` tingui l'opció de `no_root_squash`, que desactiva el sistema de protecció.
 
 Haurem de modificar l'arxiu `/etc/exports`.
 
