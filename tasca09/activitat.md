@@ -1,10 +1,26 @@
 # T09: Servidor fitxers Linux. NFS
 
-## Fase 1: Preparació de l'entorn
+## Fase 1: Preparació de l'entorn (Infraestructura i Xarxa)
 
 Creem dues màquines virtuals, una amb Ubuntu Server 24.04 LTS que actuarà com a servidor NFS i l'altre amb Zorin OS 18, que actuarà com a client.
 
 A les dues màquines les afegim un adaptador de xarxa `host-only` per a que es puguin veure entre elles.
+
+I veiem que es veuen correctament:
+
+Des del servidor al client:
+
+<img src="img/1.png">
+
+Des del client al servidor:
+
+<img src="img/2.png">
+
+En iniciar-les, actualitzem la llista de paquets i els mateixos paquets amb la següent comanda:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
 
 ---
 
@@ -16,15 +32,13 @@ Començarem amb la preparació del servidor, i per això crearem dos grups per a
 sudo groupadd devs && sudo groupadd admins
 ```
 
-<img src="img/1.png">
-
 I comprovem que s’han creat correctament amb la comanda grep.
 
 ```bash
 cat /etc/group | grep -E "devs|admins"
 ```
 
-<img src="img/2.png">
+<img src="img/3.png">
 
 Creem un usuari dev01 que és membre del grup devs.
 
@@ -32,11 +46,13 @@ Creem un usuari dev01 que és membre del grup devs.
 sudo useradd -m -s /bin/bash -G devs dev01
 ```
 
+I comprovem que s’han creat correctament amb la comanda grep.
+
 ```bash
 cat /etc/passwd | grep -e dev01
 ```
 
-<img src="img/3.png">
+<img src="img/4.png">
 
 I fem el mateix amb admin01 i el grup admins.
 
@@ -48,7 +64,7 @@ sudo useradd -m -s /bin/bash -G admins admin01
 cat /etc/passwd | grep -e admin01
 ```
 
-<img src="img/4.png">
+<img src="img/5.png">
 
 Ara creem un directori per als projectes de desenvolupament.
 
@@ -56,7 +72,7 @@ Ara creem un directori per als projectes de desenvolupament.
 sudo mkdir -pv /srv/nfs/dev_projects
 ```
 
-<img src="img/5.png">
+<img src="img/6.png">
 
 I un altre per a les eines d’administració.
 
@@ -64,7 +80,7 @@ I un altre per a les eines d’administració.
 sudo mkdir -pv /srv/nfs/admin_tools
 ```
 
-<img src="img/6.png">
+<img src="img/7.png">
 
 I modifiquem els permisos de manera que els developers tinguin control total sobre els seus projectes i els administradors sobre les seves eines.
 
@@ -73,7 +89,7 @@ sudo chown :devs dev_projects/
 sudo chown :admins admin_tools/
 ```
 
-<img src="img/7.png">
+<img src="img/8.png">
 
 ---
 
@@ -83,7 +99,7 @@ Ara repetirem la mateixa configuració que hem creat en el servidor amb el clien
 
 Per a fer-ho haurem de dirigir-nos a la botiga de **Software** i buscarem la aplicació `Users and Groups` i l'instal·larem.
 
-<img src="img/8.png">
+<img src="img/9.png">
 
 En obrir-la trobem el nostre usuari actual i podem veure que podem afegir un nou usuari o bé gestionar els grups.
 
@@ -91,19 +107,19 @@ Pel que crearem els mateixos usuaris i grups que en el servidor, intentant mante
 
 Per a fer-ho haurem de donar-li a **Manage Groups** per a crears els grups `devs` i `admins`.
 
-<img src="img/9.png">
+<img src="img/10.png">
 
 I una vegada a dins li donem a **Add** per a crear-ho.
 
-<img src="img/10.png">
+<img src="img/11.png">
 
 I fiquem el nom del primer grup `devs` amb GID `1001`.
 
-<img src="img/11.png">
+<img src="img/12.png">
 
 I segon grup `admins` amb GID `1002`.
 
-<img src="img/12.png">
+<img src="img/13.png">
 
 Una vegada amb els grups creats el próxim pas es crear els usuaris `dev01` i `admin01`.
 
@@ -113,20 +129,20 @@ Pel que tornarem al menú principal i farem clic a **Add**
 
 En donar-li crearem el primer usuari `dev01`.
 
-<img src="img/13.png">
+<img src="img/14.png">
 
 I li assignarem una contrassenya.
 
-<img src="img/14.png">
+<img src="img/15.png">
 
 I farem el mateix amb el segon usuari `admin01`.
 
-<img src="img/15.png">
 <img src="img/16.png">
+<img src="img/17.png">
 
 I finalment podem veure que s'han creat correctament
 
-<img src="img/17.png">
+<img src="img/18.png">
 
 Però haurem d'afegir-los als grups corresponents.
 
@@ -134,11 +150,11 @@ Per a fer-ho haurem de editar les opcions dels grups i seleccionar en la casella
 
 En aquest cas el grup `devs` a l'usuari `dev01`.
 
-<img src="img/18.png">
+<img src="img/19.png">
 
 I després el grup `admins` a l'usuari `admin01`.
 
-<img src="img/19.png">
+<img src="img/20.png">
 
 ---
 
@@ -152,7 +168,7 @@ sudo apt install nfs-kernel-server -y
 
 I veiem que s'ha instal·lat correctament.
 
-<img src="img/20.png">
+<img src="img/21.png">
 
 Ara caldrà configurar l'exportació dels directoris amb les opcions corresponents.
 
@@ -162,7 +178,7 @@ Per a fer-ho haurem de editar l'arxiu `/etc/exports`.
 sudo nano /etc/exports
 ```
 
-<img src="img/21.png">
+<img src="img/22.png">
 
 I afegim la seguent línia:
 
@@ -170,7 +186,7 @@ I afegim la seguent línia:
 /srv/nfs 192.168.56.105(rw,sync)
 ```
 
-<img src="img/22.png">
+<img src="img/23.png">
 
 Un cop configurat, ja podem inicir el servei.
 
@@ -180,7 +196,7 @@ sudo systemctl start nfs-kernel-server
 
 I comprovem què estem compartint via NFS.
 
-<img src="img/23.png">
+<img src="img/24.png">
 
 Ara cal instal·lar el client NFS al Zorin.
 
@@ -194,7 +210,7 @@ I comprovarem que té accés al recurs del servidor i podem veure que el veu cor
 sudo showmount -e 192.168.56.203
 ```
 
-<img src="img/24.png">
+<img src="img/25.png">
 
 Ara per a podem mapejar la carpeta, haurem de crear-la primer.
 
@@ -210,13 +226,23 @@ sudo mount -t nfs 192.168.56.203:/srv/nfs /srv/remot
 
 I podem veure que la carpeta del servidor està disponible.
 
-<img src="img/25.png">
+<img src="img/26.png">
 
 ---
 
 ## Fase 3: L'Exportació d'Administració
 
-Pero encara no tenim permisos, ja que per defecte en NFS, l'opció `root_squash` fa que l'usuari root del client sigui `nfsnobody`, el que evita que pugui modificar fitxers amb privilegis de superusuari al servidor.
+El client necessita que el directori `/srv/nfs/admin_tools` sigui accessible per l'equip d'administradors.
+
+Es per això que exportarem el directori `/srv/nfs/admin_tools` amb les opcions `rw,sync`.
+
+```bash
+/srv/nfs/admin_tools 192.168.56.105(rw,sync)
+```
+
+
+
+<!-- Pero encara no tenim permisos, ja que per defecte en NFS, l'opció `root_squash` fa que l'usuari root del client sigui `nfsnobody`, el que evita que pugui modificar fitxers amb privilegis de superusuari al servidor.
 
 Per això en intentar accedir per a crear un fitxer ens surt el següent error:
 
@@ -248,4 +274,4 @@ sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 I podem veure que ja ens deixa accedir i crear arxius a dins de la carpeta.
 
 <img src="img/28.png">
-
+ -->
