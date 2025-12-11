@@ -379,4 +379,41 @@ I ara provarem de crear un arxiu al mateix directori amb l'usuari `admin01`. I p
 
 <img src="img/36.png">
 
+---
+
 ## Fase 5: Muntatge Automàtic amb /etc/fstab
+
+És evident que els usuaris no poden estar muntant manualment els recursos compartits cada vegada que reinicien el sistema. Per això, es configurarà el muntatge automàtic mitjançant el fitxer `/etc/fstab` al client.
+
+Editem l'arxiu `/etc/fstab`.
+
+```bash
+sudo nano /etc/fstab
+```
+
+I afegim les següents línes:
+
+```bash
+192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools nfs defaults 0 0 
+192.168.56.203:/srv/nfs/dev_projects /mnt/dev_projects nfs defaults 0 0 
+```
+
+<img src="img/37.png">
+
+Una vegada amb les línes ficades a l'arxiu, haurem de provar si es monta automàticament. Ho fem amb la següent comanda:
+
+```bash
+sudo mount -a
+```
+
+I ara reiniciarem la màquina client per a veure si els recursos s'han muntat correctament en iniciar la màquina.
+
+<img src="img/38.png">
+
+---
+
+## Conclusió
+
+Durant la creació del servidor NFS he pogut veure que es tracta d'una eina potent i útil encara que de la manera que ha sigut implementada presenta algunes limitacions.
+
+Per a una millor solucío en un futur, implementaria una autentificació centralitzada amb un servidor de l'estil de OpenLDAP o similar combinat amb implementació de grups i parámetres específics per a cada departament per a millorar la seguretat.
