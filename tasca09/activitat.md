@@ -283,7 +283,7 @@ I per a poder accedir al recurs, haurem d'utilitzar la comanda `mount` per a mun
 sudo mount -t nfs 192.168.56.203:/srv/nfs/admin_tools /mnt/admin_tools
 ```
 
-### El Dilema del `root_squash`
+### 1. El Dilema del `root_squash`
 
 En intentar accedir a `/mnt/admin_tools` com a `root`, no ens deixa, ja que per defecte en NFS està activada l’opció `root_squash`. Aquesta opció fa que l’usuari root del client es sigui `nobody`, la qual cosa que impedeix que pugui modificar fitxers amb privilegis de superusuari al servidor.
 
