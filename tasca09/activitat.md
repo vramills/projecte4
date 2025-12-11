@@ -316,13 +316,13 @@ I podem veure que ja podem accedir com a `root`:
 
 ## Fase 4: L'Exportació de Desenvolupament (Permisos rw vs ro)
 
-Ara editarem `/etc/exports` per afegir dues exportacions per al mateix directori. Fent que el client d'administració amb IP `192.168.56.100` hi pugui escriure, però que el client de consultors amb IP `192.168.56.200` només pugui llegir.
+Ara editarem `/etc/exports` per afegir dues exportacions per al mateix directori. Fent que l'equip que estigui a dins de la xarxa d'administració `192.168.56.0/24` hi pugui escriure, però que l'equip de consultors amb IP `192.168.56.200` només pugui llegir.
 
 Haurem de modificar l'arxiu `/etc/exports` i afegir les següents línes:
 
 ```bash
-/srv/nfs/dev_projects 192.168.56.100(rw,sync,no_root_squash)
-/srv/nfs/dev_projects 192.168.56.200(r,sync,no_root_squash)
+/srv/nfs/dev_projects 192.168.56.0/24(rw,sync,no_root_squash)
+/srv/nfs/dev_projects 192.168.56.200(ro,sync,no_root_squash)
 ```
 
 Una vegada amb les línes afegides, reiniciem el servei.
