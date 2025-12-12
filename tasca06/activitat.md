@@ -10,7 +10,7 @@ El primer pas és afegir una nova interfície de xarxa `host-only` a cada una de
 
 ## Configuració de la màquina Windows
 
-Una vegada a dins de la màquina Windows, ens dirigim a la opció de `Configuración de Escritorio Remoto`.
+Una vegada a dins de la màquina Windows, ens dirigim a l'opció de `Configuración de Escritorio Remoto`.
 
 <img src="img/2.png">
 
@@ -26,11 +26,11 @@ Una vegada amb aquesta opció activada, ja podriem connectar-nos a aquesta màqu
 
 Ara ens dirigim a la màquina Zorin per a activar per a que es pugui connectar a la màquina Windows remotament. 
 
-Haurem d'anar a `Settings`. I una vegada dins de `Settings`, anem a la opció de `Remote Desktop`.
+Haurem d'anar a `Settings` > `Remote Desktop`.
 
 <img src="img/4.png">
 
-I aquí activem l'opció de `Desktop Sharing` i de `Remote Control` per a que es pugui controlar la màquina remotament. Utilitzem el mateix usuari i contrasenya que utilitzem per a entrar a la màquina Zorin, però podriem canviar-ho si volem.
+I aquí activem l'opció de `Desktop Sharing` i `Remote Control`, per a que es pugui controlar la màquina remotament. Utilitzem el mateix usuari i contrasenya que utilitzem per a entrar a la màquina Zorin, però podriem canviar-ho si volem.
 
 <img src="img/5.png">
 
