@@ -62,28 +62,11 @@ Incloent:
 
 ---
 
-## 📘 Resultat esperat
-
-Cal generar dues guies internes:
-
-- `windows-rdp.md`: Connexions RDP des de Windows  
-- `linux-rdp.md`: Connexions RDP des de Linux  
-
-Amb:
-
-- Requisits previs  
-- Passos detallats amb captures  
-- Errors comuns i solucions  
-- Proves de connexió en entorn virtual  
-
----
-
 ## 📂 Estructura de carpetes
 
 Dins la carpeta `tasca06` trobaràs:
 
-- `windows-rdp.md`: Guia RDP des de Windows  
-- `linux-rdp.md`: Guia RDP des de Linux  
+- `activitat.md`: Guia per a fer connexions RDP des de Windows i Linux.
 
 ---
 
@@ -91,5 +74,4 @@ Dins la carpeta `tasca06` trobaràs:
 
 Consulta cada guia aquí:
 
-- Al arxiu [windows-rdp.md](windows-rdp.md) pots trobar la Guia RDP des de Windows.
-- Al arxiu [linux-rdp.md](linux-rdp.md) pots trobar la Guia RDP des de Linux.
+- Al arxiu [activitat.md](activitat.md) pots trobar la Guia d'Accés Remot RDP completa.
