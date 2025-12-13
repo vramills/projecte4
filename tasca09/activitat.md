@@ -417,3 +417,5 @@ I ara reiniciarem la màquina client per a veure si els recursos s'han muntat co
 Durant la creació del servidor NFS, he pogut veure que es tracta d'una eina potent i útil, encara que de la manera que ha sigut implementada presenta algunes limitacions, com que els UID I GID han de ser els mateixos tant en el servidor com en el client.
 
 Per a una millor solució en un futur, implementaria una autentificació centralitzada, amb un servidor de l'estil de OpenLDAP o similar, combinat amb implementació de grups i parámetres específics, per a cada departament, el que milloraria la seguretat.
+
+[Tornar a enunciat](README.md)
