@@ -146,7 +146,7 @@ Desrpés tenim la funció de transferència de fitxers, que ens permet enviar o 
 
 ---
 
-### Reinici Remot de l'Ordindor
+## Reinici Remot de l'Ordindor
 
 Amb la cuarta icona, anomenada `Reiniciar`, podem reiniciar l'ordinador de l'usuari de manera remota.
 
@@ -154,7 +154,7 @@ Amb la cuarta icona, anomenada `Reiniciar`, podem reiniciar l'ordinador de l'usu
 
 ---
 
-### Funció de Pissarra
+## Funció de Pissarra
 
 També tenim la funció de `Pizarra` que ens permet dibuixar sobre la pantalla de l'usuari per indicar-li on ha de fer clic o quina opció ha de seleccionar.
 
