@@ -7,7 +7,7 @@ Quan un client té problemes com:
 - "Ha desaparegut una icona"  
 - "La impressora no imprimeix"  
 
-necessitem una eina ràpida, fiable i segura que funcioni sota demanda, sense configuracions complexes ni VPNs.
+Necessitem una eina ràpida, fiable i segura que funcioni sota demanda, sense configuracions complexes ni VPNs.
 
 EverPia ha decidit estandarditzar l’eina oficial d’assistència remota i la vostra missió, treballant en parelles, és:
 
