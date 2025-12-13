@@ -59,15 +59,10 @@ Un cop seleccionada l’eina, cal elaborar **dues guies oficials**:
 
 Dins la carpeta `tasca07` es troben els següents fitxers:
 
-- `comparativa-assistencia.md` → Taula comparativa i justificació de l’eina seleccionada  
-- `manual-tecnic.md` → Guia d’ús interna per a tècnics  
-- `manual-client.md` → Guia d’ús simplificada per a l’usuari final
+- `activitat.md`: Activitat amb les diferents fases i guies a seguir per als tecnics i clients.
 
 ---
 
 ## 📎 Documents
 
-- Al arxiu [comparativa-assistencia.md](comparativa-assistencia.md) pots trobar la taula comparativa de les eines i la justificació de la solució escollida.  
-- Al arxiu [manual-tecnic.md](manual-tecnic.md) pots trobar la guia d’ús detallada per als tècnics.  
-- Al arxiu [manual-client.md](manual-client.md) pots trobar la guia visual i simplificada per als clients.
-
+- Al arxiu [activitat.md](activitat.md) es detallen les fases de la tasca i les guies d’ús.
