@@ -28,7 +28,7 @@ Després d’analitzar les diferents opcions disponibles, es recomana `TeamViewe
 
 Un cop seleccionada l'eina a la Fase 1, ara crearem la documentació oficial per al seu ús. Aquesta documentació és crucial i tindrà dues parts: una guia per als tècnics d'assistència i una guia per als usuaris finals.
 
-## 1. Guia per als Tècnics d'Assistència Remota amb TeamViewer
+## Guia per als Tècnics d'Assistència Remota amb TeamViewer
 
 Aquesta guia està destinada als tècnics d'assistència remota d'EverPia per utilitzar `TeamViewer` de manera eficient i segura. 
 
@@ -122,7 +122,7 @@ Una vegada connectats, podem utilitzar diverses funcions addicionals com transfe
 
 <img src="img/icons.png">
 
-## Veure informació sobre el sistema de l'usuari (Panel)
+## 3.1 Veure informació sobre el sistema de l'usuari (Panel)
 
 Una de les funcions és poder veure la informació de sobre el sistema de l'usuari, per a això anem a la barra superior i a la primera icona, anomenada `Panel`.  
 
@@ -132,13 +132,13 @@ Aquí podem veure tota la informació del sistema de l'usuari, com el sistema op
 
 ---
 
-## Enviar la seqüència de tecles Ctrl+Alt+Supr
+## 3.2 Enviar la seqüència de tecles Ctrl+Alt+Supr
 
 La segona icona és la de enviar la seqüència de tecles `Ctrl+Alt+Supr` a l'ordinador de l'usuari, que ens obrirà el gestor de tasques o la pantalla de bloqueig segons el sistema operatiu.
 
 ---
 
-## Transferència de Fitxers
+## 3.3 Transferència de Fitxers
 
 Desrpés tenim la funció de transferència de fitxers, que ens permet enviar o rebre fitxers entre el nostre ordinador i l'ordinador de l'usuari. Per a això anem a la tercera icona, anomenada `Transferencia de archivos`.
 
@@ -146,7 +146,7 @@ Desrpés tenim la funció de transferència de fitxers, que ens permet enviar o 
 
 ---
 
-## Reinici Remot de l'Ordindor
+## 3.4 Reinici Remot de l'Ordindor
 
 Amb la cuarta icona, anomenada `Reiniciar`, podem reiniciar l'ordinador de l'usuari de manera remota.
 
@@ -154,7 +154,7 @@ Amb la cuarta icona, anomenada `Reiniciar`, podem reiniciar l'ordinador de l'usu
 
 ---
 
-## Funció de Pissarra
+## 3.5 Funció de Pissarra
 
 També tenim la funció de `Pizarra` que ens permet dibuixar sobre la pantalla de l'usuari per indicar-li on ha de fer clic o quina opció ha de seleccionar.
 
