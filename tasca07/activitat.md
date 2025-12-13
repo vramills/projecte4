@@ -160,4 +160,15 @@ També tenim la funció de `Pizarra` que ens permet dibuixar sobre la pantalla d
 
 <img src="img/20.png">
 
+---
+
+## 4. Bones Pràctiques de Seguretat
+
+Per garantir la seguretat durant les sessions d'assistència remota, és important seguir aquestes bones pràctiques:
+
+- Assegurar-se que l'usuari està informat i ha donat el seu consentiment abans d'iniciar la sessió remota.
+- No compartir les credencials d'accés amb persones no autoritzades.
+- Finalitzar la sessió remota immediatament després de completar l'assistència.
+- Mantenir el programari de TeamViewer actualitzat per beneficiar-se de les últimes mesures de seguretat.
+
 [Tornar a enunciat](README.md)
