@@ -20,7 +20,7 @@ El primer pas és decidir quina eina utilitzarà EverPia. Pel que hem fet una an
 
 ## Justificació de l’Eina Seleccionada
 
-Després d’analitzar les diferents opcions disponibles, es recomana `AnyDesk` com a eina oficial d’assistència remota per a EverPia. Aquesta solució combina facilitat d’ús per a l’usuari final, compatibilitat amb entorns mixtos i un model de llicència assequible. Així, permet als tècnics oferir suport ràpid, segur i eficient, sense complicacions per al client i amb un bon equilibri entre funcionalitat, rendiment i cost.
+Després d’analitzar les diferents opcions disponibles, es recomana `TeamViewer` com a eina oficial d’assistència remota per a EverPia. Aquesta solució destaca per la seva gran fiabilitat, estabilitat i reconeixement al mercat professional, sent àmpliament utilitzada en entorns empresarials.
 
 ---
 
@@ -28,25 +28,50 @@ Després d’analitzar les diferents opcions disponibles, es recomana `AnyDesk` 
 
 Un cop seleccionada l'eina a la Fase 1, ara crearem la documentació oficial per al seu ús. Aquesta documentació és crucial i tindrà dues parts: una guia per als tècnics d'assistència i una guia per als usuaris finals.
 
-## Guia per als Tècnics d'Assistència Remota amb AnyDesk
+## Guia per als Tècnics d'Assistència Remota amb TeamViewer
 
 ### Introducció
 
-Aquesta guia està destinada als tècnics d'assistència remota d'EverPia per utilitzar `AnyDesk` de manera eficient i segura.
+Aquesta guia està destinada als tècnics d'assistència remota d'EverPia per utilitzar `TeamViewer` de manera eficient i segura. 
 
-### Passos per a l'Ús d'AnyDesk
+### Instal·lació de TeamViewer
 
-1. **Descàrrega i Instal·lació**
-   - Descarrega AnyDesk des del lloc oficial: [https://anydesk.com](https://anydesk.com).
-   - Instal·la l'aplicació seguint les instruccions proporcionades.
+Per a poder fer assistència remota, hem de tenir instal·lat `TeamViewer` a l'ordinador des del qual es realitzarà l'assistència. Ens dirigim a la pàgina oficial de TeamViewer i descarreguem la versió per a donar suport, es a dir, la versió completa de TeamViewer.
 
-2. **Connexió a un Client**
-   - Obre AnyDesk i demana al client que et proporcioni el seu ID d'AnyDesk.
-   - Introdueix l'ID al camp "Remote Desk" i fes clic a "Connect".
-   - Espera que el client accepti la connexió.
-   - Un cop connectat, utilitza les eines disponibles per oferir assistència.
+<img src="img/1.png">
 
-3. **Funcions Clau**
-   - **Transferència de Fitxers**: Utilitza la funció de transferència de fitxers per enviar o rebre documents.
-   - **Xat Integrat**: Comunica't amb el client mitjançant el xat integrat per resoldre dubtes.
-   - **Captura de Pantalla**: Fes captures de pantalla per documentar problemes o solucions.
+Una vegada descarregat, procedim a la instal·lació seguint els passos de l'assistent d'instal·lació.
+
+<img src="img/2.png">
+
+En finalitzar la instal·lació, obrim l'aplicació i ens demana que acceptem la llicència d'ús de TeamViewer.
+
+<img src="img/3.png">
+
+I acceptem les noves funcions que ens ofereix TeamViewer.
+
+<img src="img/4.png">
+
+Ens apareix el panell principal de TeamViewer, on podem veure el nostre ID i contrasenya en cas de que necessitéssim rebre assistència, pero l'opció que ens interessa és la de donar assistència remota a un altre usuari, així que iniciem sessió amb les credencials del nostre compte de TeamViewer.
+
+<img src="img/5.png">
+
+I escollim iniciar sessió amb el nostre compte Google per a més comoditat.
+
+<img src="img/6.png">
+
+Una vegada dins de l'aplicació, ja podem començar a donar assistència remota als usuaris finals.
+
+<img src="img/7.png">
+
+### Procés d'Assistència Remota
+
+Per a poder donar assistència remota a un usuari final, primer hem de demanar-li que descarregui i executi el mòdul `TeamViewer QuickSupport` des de la pàgina oficial de TeamViewer. 
+
+<img src="img/8.png">
+
+Una vegada l'usuari final ha executat el mòdul, li demanem que ens faciliti l'ID i la contrasenya que apareixen a la finestra del QuickSupport. I els introduïm a la nostra aplicació de TeamViewer a la secció de `Soporte remoto`.
+
+<img src="img/9.png">
+
+[Tornar a enunciat](README.md)
