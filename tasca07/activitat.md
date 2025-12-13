@@ -116,13 +116,11 @@ I finalment ja estem connectats a l'ordinador de l'usuari.
 
 ---
 
-## Fuincions Addicionals
+## 3. Funcions Addicionals
 
 Una vegada connectats, podem utilitzar diverses funcions addicionals com transferència de fitxers, xat amb l'usuari, reinici remot, entre altres.
 
 <img src="img/icons.png">
-
----
 
 ## Veure informació sobre el sistema de l'usuari (Panel)
 
