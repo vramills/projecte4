@@ -146,11 +146,15 @@ Desrpés tenim la funció de transferència de fitxers, que ens permet enviar o 
 
 <img src="img/14.png">
 
+---
+
 ### Reinici Remot de l'Ordindor
 
 Amb la cuarta icona, anomenada `Reiniciar`, podem reiniciar l'ordinador de l'usuari de manera remota.
 
 <img src="img/icons.png">
+
+---
 
 ### Funció de Pissarra
 
