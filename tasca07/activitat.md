@@ -30,11 +30,9 @@ Un cop seleccionada l'eina a la Fase 1, ara crearem la documentació oficial per
 
 ## Guia per als Tècnics d'Assistència Remota amb TeamViewer
 
-### Introducció
-
 Aquesta guia està destinada als tècnics d'assistència remota d'EverPia per utilitzar `TeamViewer` de manera eficient i segura. 
 
-### Instal·lació de TeamViewer
+## Instal·lació de TeamViewer
 
 Per a poder fer assistència remota, hem de tenir instal·lat `TeamViewer` a l'ordinador des del qual es realitzarà l'assistència. Ens dirigim a la pàgina oficial de TeamViewer i descarreguem la versió per a donar suport, es a dir, la versió completa de TeamViewer.
 
@@ -64,14 +62,86 @@ Una vegada dins de l'aplicació, ja podem començar a donar assistència remota 
 
 <img src="img/7.png">
 
-### Procés d'Assistència Remota
+---
+
+## Procés d'Assistència Remota
 
 Per a poder donar assistència remota a un usuari final, primer hem de demanar-li que descarregui i executi el mòdul `TeamViewer QuickSupport` des de la pàgina oficial de TeamViewer. 
 
 <img src="img/8.png">
 
+---
+
+## Connexió Remota a través del ID i Contrasenya
+
 Una vegada l'usuari final ha executat el mòdul, li demanem que ens faciliti l'ID i la contrasenya que apareixen a la finestra del QuickSupport. I els introduïm a la nostra aplicació de TeamViewer a la secció de `Soporte remoto`.
 
 <img src="img/9.png">
+
+Un cop introduïts, fem clic a `Conectar` i s'establirà la connexió remota amb l'usuari , podent veure i controlar el seu escriptori per ajudar-lo.
+
+<img src="img/10.png">
+
+Aqui ens demana la contrasenya que l'usuari ens ha facilitat.
+
+<img src="img/11.png">
+
+I finalment podem veure que ja estem connectats al seu ordinador.
+
+<img src="img/12.png">
+
+---
+
+## Connexió Remota a través de la sessió
+
+També podem connectar-nos a l'ordinador de l'usuari a través d'una sessió que haurem de crear desde la pestanya de `Sessions` a l'aplicació de TeamViewer donat-li al botó de `Nueva sesión`.
+
+<img src="img/15.png">
+
+Una vegada amb la sessió creada, l'usuari es pot connectar per un enllaç que li proporcionem o bé introduint el codi de la sessió a la seva aplicació de TeamViewer QuickSupport.
+
+<img src="img/16.png">
+
+Un cop l'usuari s'ha connectat a la sessió, nosaltres rebem una notificació a la pestanya de `Sessions` i haurem de clicar a `Iniciar sesión` per a iniciar la sessió.
+
+<img src="img/17.png">
+
+Haurem d'esperar que l'usuari accepti la connexió.
+
+<img src="img/18.png">
+
+I finalment ja estem connectats a l'ordinador de l'usuari.
+
+<img src="img/19.png">
+
+---
+
+## Fuincions Addicionals
+
+Una vegada connectats, podem utilitzar diverses funcions addicionals com transferència de fitxers, xat amb l'usuari, reinici remot, entre altres.
+
+Una de les funcions és poder veure la informació de sobre el sistema de l'usuari, per a això anem a la barra superior i a la primera icona, anomenada `Panel`.  
+
+<img src="img/icons.png">
+
+Aquí podem veure tota la informació del sistema de l'usuari, com el sistema operatiu, processador, memòria RAM, etc. El que és molt útil per diagnosticar problemes del sistema.
+
+<img src="img/13.png">
+
+La segona icona és la de enviar la seqüència de tecles `Ctrl+Alt+Supr` a l'ordinador de l'usuari, que ens obrirà el gestor de tasques o la pantalla de bloqueig segons el sistema operatiu.
+
+<img src="img/icons.png">
+
+Desrpés tenim la funció de transferència de fitxers, que ens permet enviar o rebre fitxers entre el nostre ordinador i l'ordinador de l'usuari. Per a això anem a la tercera icona, anomenada `Transferencia de archivos`.
+
+<img src="img/14.png">
+
+Amb la cuarta icona, anomenada `Reiniciar`, podem reiniciar l'ordinador de l'usuari de manera remota.
+
+<img src="img/icons.png">
+
+També tenim la funció de `Pizarra` que ens permet dibuixar sobre la pantalla de l'usuari per indicar-li on ha de fer clic o quina opció ha de seleccionar.
+
+<img src="img/20.png">
 
 [Tornar a enunciat](README.md)
