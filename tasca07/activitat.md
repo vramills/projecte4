@@ -72,7 +72,7 @@ Per a poder donar assistència remota a un usuari final, primer hem de demanar-l
 
 ---
 
-## Connexió Remota a través del ID i Contrasenya
+## 1. Connexió Remota a través del ID i Contrasenya
 
 Una vegada l'usuari final ha executat el mòdul, li demanem que ens faciliti l'ID i la contrasenya que apareixen a la finestra del QuickSupport. I els introduïm a la nostra aplicació de TeamViewer a la secció de `Soporte remoto`.
 
@@ -92,7 +92,7 @@ I finalment podem veure que ja estem connectats al seu ordinador.
 
 ---
 
-## Connexió Remota a través de la sessió
+## 2. Connexió Remota a través de la sessió
 
 També podem connectar-nos a l'ordinador de l'usuari a través d'una sessió que haurem de crear desde la pestanya de `Sessions` a l'aplicació de TeamViewer donat-li al botó de `Nueva sesión`.
 
@@ -120,25 +120,39 @@ I finalment ja estem connectats a l'ordinador de l'usuari.
 
 Una vegada connectats, podem utilitzar diverses funcions addicionals com transferència de fitxers, xat amb l'usuari, reinici remot, entre altres.
 
-Una de les funcions és poder veure la informació de sobre el sistema de l'usuari, per a això anem a la barra superior i a la primera icona, anomenada `Panel`.  
-
 <img src="img/icons.png">
+
+---
+
+## Veure informació sobre el sistema de l'usuari (Panel)
+
+Una de les funcions és poder veure la informació de sobre el sistema de l'usuari, per a això anem a la barra superior i a la primera icona, anomenada `Panel`.  
 
 Aquí podem veure tota la informació del sistema de l'usuari, com el sistema operatiu, processador, memòria RAM, etc. El que és molt útil per diagnosticar problemes del sistema.
 
 <img src="img/13.png">
 
+---
+
+## Enviar la seqüència de tecles Ctrl+Alt+Supr
+
 La segona icona és la de enviar la seqüència de tecles `Ctrl+Alt+Supr` a l'ordinador de l'usuari, que ens obrirà el gestor de tasques o la pantalla de bloqueig segons el sistema operatiu.
 
-<img src="img/icons.png">
+---
+
+## Transferència de Fitxers
 
 Desrpés tenim la funció de transferència de fitxers, que ens permet enviar o rebre fitxers entre el nostre ordinador i l'ordinador de l'usuari. Per a això anem a la tercera icona, anomenada `Transferencia de archivos`.
 
 <img src="img/14.png">
 
+### Reinici Remot de l'Ordindor
+
 Amb la cuarta icona, anomenada `Reiniciar`, podem reiniciar l'ordinador de l'usuari de manera remota.
 
 <img src="img/icons.png">
+
+### Funció de Pissarra
 
 També tenim la funció de `Pizarra` que ens permet dibuixar sobre la pantalla de l'usuari per indicar-li on ha de fer clic o quina opció ha de seleccionar.
 
