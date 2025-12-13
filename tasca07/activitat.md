@@ -28,11 +28,11 @@ Després d’analitzar les diferents opcions disponibles, es recomana `TeamViewe
 
 Un cop seleccionada l'eina a la Fase 1, ara crearem la documentació oficial per al seu ús. Aquesta documentació és crucial i tindrà dues parts: una guia per als tècnics d'assistència i una guia per als usuaris finals.
 
-## Guia per als Tècnics d'Assistència Remota amb TeamViewer
+## 1. Guia per als Tècnics d'Assistència Remota amb TeamViewer
 
 Aquesta guia està destinada als tècnics d'assistència remota d'EverPia per utilitzar `TeamViewer` de manera eficient i segura. 
 
-## Instal·lació de TeamViewer
+## 1. Instal·lació de TeamViewer
 
 Per a poder fer assistència remota, hem de tenir instal·lat `TeamViewer` a l'ordinador des del qual es realitzarà l'assistència. Ens dirigim a la pàgina oficial de TeamViewer i descarreguem la versió per a donar suport, es a dir, la versió completa de TeamViewer.
 
@@ -64,7 +64,7 @@ Una vegada dins de l'aplicació, ja podem començar a donar assistència remota 
 
 ---
 
-## Procés d'Assistència Remota
+## 2. Procés d'Assistència Remota
 
 Per a poder donar assistència remota a un usuari final, primer hem de demanar-li que descarregui i executi el mòdul `TeamViewer QuickSupport` des de la pàgina oficial de TeamViewer. 
 
@@ -72,7 +72,7 @@ Per a poder donar assistència remota a un usuari final, primer hem de demanar-l
 
 ---
 
-## 1. Connexió Remota a través del ID i Contrasenya
+## 2.1 Connexió Remota a través del ID i Contrasenya
 
 Una vegada l'usuari final ha executat el mòdul, li demanem que ens faciliti l'ID i la contrasenya que apareixen a la finestra del QuickSupport. I els introduïm a la nostra aplicació de TeamViewer a la secció de `Soporte remoto`.
 
@@ -92,7 +92,7 @@ I finalment podem veure que ja estem connectats al seu ordinador.
 
 ---
 
-## 2. Connexió Remota a través de la sessió
+## 2.2 Connexió Remota a través de la sessió
 
 També podem connectar-nos a l'ordinador de l'usuari a través d'una sessió que haurem de crear desde la pestanya de `Sessions` a l'aplicació de TeamViewer donat-li al botó de `Nueva sesión`.
 
